@@ -47,7 +47,8 @@
 
     Заменим значения в  
   ![group_vars/deb](https://github.com/elenaparf/mnt-homeworks/blob/MNT-video/08-ansible-01-base/playbook/group_vars/deb/examp.yml) и ![group_vars/el](https://github.com/elenaparf/mnt-homeworks/blob/MNT-video/08-ansible-01-base/playbook/group_vars/el/examp.yml). 
-  Запуск плейбука
+    
+     Запуск плейбука
   ![051](https://github.com/user-attachments/assets/a44be92b-2e98-43b6-add4-9f75d0eb9d5f)
   
   При помощи ansible-vault зашифруйте факты в group_vars/deb и group_vars/el с паролем netology.
