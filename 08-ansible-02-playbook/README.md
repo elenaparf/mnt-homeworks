@@ -15,15 +15,17 @@
       Для подготовки окружения используем [terraform](https://github.com/elenaparf/mnt-homeworks/tree/MNT-video/08-ansible-02-playbook/terraform)  с модулями,        в результате динамически формируется inventory [prod.yml](https://github.com/elenaparf/mnt-homeworks/blob/MNT-video/08-ansible-02-playbook/playbook/inventory/prod.example.yml) по шаблону [inventory.tftpl](https://github.com/elenaparf/mnt-homeworks/blob/MNT-video/08-ansible-02-playbook/terraform/inventory.tftpl).
       Clickhouse будет ставиться на отдельную ВМ, Vector на две другие ВМ. Также сразу настроим отправку логов из vector в Clickhouse, что прописано  в               security rules.
    
-3. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает [vector](https://vector.dev). Конфигурация vector должна деплоиться через template файл jinja2. От вас не требуется использовать все возможности шаблонизатора, просто вставьте стандартный конфиг в template файл. Информация по шаблонам по [ссылке](https://www.dmosk.ru/instruktions.php?object=ansible-nginx-install). не забудьте сделать handler на перезапуск vector в случае изменения конфигурации!
-4. При создании tasks рекомендую использовать модули: `get_url`, `template`, `unarchive`, `file`.
-5. Tasks должны: скачать дистрибутив нужной версии, выполнить распаковку в выбранную директорию, установить vector.
-6. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
-7. Попробуйте запустить playbook на этом окружении с флагом `--check`.
-8. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
-9. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
-10. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8
-11. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
+2. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает [vector](https://vector.dev). Конфигурация vector должна деплоиться через template файл jinja2. От вас не требуется использовать все возможности шаблонизатора, просто вставьте стандартный конфиг в template файл. Информация по шаблонам по [ссылке](https://www.dmosk.ru/instruktions.php?object=ansible-nginx-install). не забудьте сделать handler на перезапуск vector в случае изменения конфигурации!
+3. При создании tasks рекомендую использовать модули: `get_url`, `template`, `unarchive`, `file`.
+4. Tasks должны: скачать дистрибутив нужной версии, выполнить распаковку в выбранную директорию, установить vector.
+      Ответ:
+      Добавим play "Install Vector" в [плейбук](https://github.com/elenaparf/mnt-homeworks/blob/MNT-video/08-ansible-02-playbook/playbook/playbook.yml). Сразу        предусмотрим идемпотентность.
+5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
+6. Попробуйте запустить playbook на этом окружении с флагом `--check`.
+9. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
+10. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
+11. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8
+12. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
 ---
 
