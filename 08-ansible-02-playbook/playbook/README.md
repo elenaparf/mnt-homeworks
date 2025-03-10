@@ -16,19 +16,21 @@ Play для установки Clickhouse выполняется для груп
     Создание группы и пользователя vector
     Создание каталогов для дистрибутива и хранения данных
     Скачивание архива с дистрибутивом, распаковка
-    Создание конфигурации Vector по шаблону templates/vector.yaml.j2 с коннектом по умолчанию к Clickhouse
+    Создание конфигурации Vector по шаблону 
+[templates/vector.yaml.j2](https://github.com/elenaparf/mnt-homeworks/blob/MNT-video/08-ansible-02-playbook/playbook/%20%20%20%20templates%20%20/vector.yaml.j2)
+    с коннектом по умолчанию к Clickhouse
     Создание systemd unit и запуск сервиса
 
 Конфигурация
 
-Список хостов (inventory) должен включать группы clickhouse и veсtor. Пример: prod.example.yml
+Список хостов (inventory) должен включать группы clickhouse и veсtor. Пример: [prod.example.yml](08-ansible-02-playbook/playbook/inventory/prod.example.yml)
 
-Для изменения параметров установки Clickhouse необходимо внести изменения в файл clickhouse vars.yml.
+Для изменения параметров установки Clickhouse необходимо внести изменения в файл [clickhouse vars.yml](08-ansible-02-playbook/playbook/group_vars/clickhouse/vars.yml).
 
     clickhouse_version: версия релиза Clickhouse (по умолчанию 22.3.3.44)
     clickhouse_packages: список пакеов для скачивания
 
-Для изменения параметров установки Vector необходимо внести изменения в файл vector vars.yml.
+Для изменения параметров установки Vector необходимо внести изменения в файл vector [vars.yml](08-ansible-02-playbook/playbook/group_vars/vector/vars.yml).
 
     vector_version: версия релиза Vector (по умолчанию 0.34.1)
     vector_architecture: архитектура (по умолчанию x86_64)
