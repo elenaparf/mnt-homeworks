@@ -71,6 +71,7 @@
     Ответ:  Ссылка на [README.md](https://github.com/elenaparf/mnt-homeworks/blob/MNT-video/08-ansible-02-playbook/playbook/README.md)
 ---
 
+
 ### Как оформить решение задания
 
 Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
