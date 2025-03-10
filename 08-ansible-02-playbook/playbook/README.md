@@ -16,9 +16,9 @@ Play для установки Clickhouse выполняется для груп
     Создание группы и пользователя vector
     Создание каталогов для дистрибутива и хранения данных
     Скачивание архива с дистрибутивом, распаковка
-    Создание конфигурации Vector по шаблону 
+    Создание конфигурации Vector по шаблону с коннектом по умолчанию к Clickhouse
 [templates/vector.yaml.j2](https://github.com/elenaparf/mnt-homeworks/blob/MNT-video/08-ansible-02-playbook/playbook/%20%20%20%20templates%20%20/vector.yaml.j2)
-    с коннектом по умолчанию к Clickhouse
+    
     Создание systemd unit и запуск сервиса
 
 Конфигурация
