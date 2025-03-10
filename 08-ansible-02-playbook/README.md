@@ -68,7 +68,7 @@
 12. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
 
-    Ответ:  Ссылка на [README.md](08-ansible-02-playbook/playbook/README.md)
+    Ответ:  Ссылка на [README.md](https://github.com/elenaparf/mnt-homeworks/blob/MNT-video/08-ansible-02-playbook/playbook/README.md)
 ---
 
 ### Как оформить решение задания
