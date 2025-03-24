@@ -31,10 +31,21 @@ Clickhouse и Lighthouse будут ставиться на отдельные �
      Ответ:
      Запустим плейбук, выполнился успешно:
      ![002](https://github.com/user-attachments/assets/58a0ac5d-5bdf-4581-93f9-2c346fe3ea13)
+     Проверим доступность Lighthouse и успешный коннект к БД Clickhouse:
+     ![004](https://github.com/user-attachments/assets/cf378d49-eea7-4ed9-bc4e-d31a1d152765)
 
-10. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
-11. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
-12. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-03-yandex` на фиксирующий коммит, в ответ предоставьте ссылку на него.
+
+8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
+
+     Ответ:
+     Повторный запуск не внёс изменений, т.е. идемпотентность соблюдена:
+     ![003](https://github.com/user-attachments/assets/9dee0088-7433-4f31-9b79-88564997f267)
+
+9. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
+
+      Ответ:
+      [README](https://github.com/elenaparf/mnt-homeworks/blob/MNT-video/08-ansible-03-yandex/%20%20%20%20playbook%20%20/README.md)
+10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-03-yandex` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
 ---
 
