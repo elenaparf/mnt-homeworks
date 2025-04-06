@@ -62,7 +62,7 @@
 > ![roles install](https://github.com/user-attachments/assets/c2be34db-1b24-497b-bf85-9595e322991b)
 
 > 5. Сформируем [playbook.yml](./%20%20%20%20playbook/playbook.yml), для play "Install Lighthouse" добавим pre_tasks с установкой git. Запустим плейбук, изменения применены успешно:  
-> ![play recap](https://github.com/user-attachments/assets/75b003b9-1780-4e5d-8533-c810b997deb0)
+> ![020](https://github.com/user-attachments/assets/7d2543ca-f393-445a-9b2a-636a3e840c63)
 
 > Повторный запуск плейбука показал отсутствие изменений, т.е. идемпотентность соблюдена:  
 > ![no changes](https://github.com/user-attachments/assets/9b2f6a7b-efae-4624-be2d-dbe3a497a249)
