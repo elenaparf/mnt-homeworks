@@ -46,7 +46,7 @@
 ---
 > ### Ответ
 >
-> 1. Инфраструктура по-прежнему создается с помощью [terraform](./terraform) с модулями, в результате динамически формируется inventory [prod.yml](playbook/inventory/prod.example.yml) по шаблону [inventory.tftpl](terraform/inventory.tftpl).  
+> 1. Инфраструктура по-прежнему создается с помощью [terraform](./%20%20%20%20terraform%20%20) с модулями, в результате динамически формируется inventory [prod.yml](./%20%20%20%20playbook/%20%20%20%20inventory%20%20/prod.example.yml) по шаблону [inventory.tftpl](terraform/inventory.tftpl).  
 > Clickhouse и Lighthouse будут ставиться на отдельные ВМ, Vector на две другие ВМ.
 >
 > 2. Инициализируем роли ansible_role_vector и ansible_role_lighthouse (поменяем имена, т.к. по новым правилам ansible-lint имя роли должно соответствовать `^[a-z][a-z0-9_]*$`)
