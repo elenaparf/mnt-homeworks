@@ -8,7 +8,7 @@
 
 ## Зависимости
 
-Описаны в файле [requirements.yml](./%20%20%20%20playbook/requirements.yml)
+Описаны в файле [requirements.yml](./requirements.yml)
 
 ## Конфигурация
 
