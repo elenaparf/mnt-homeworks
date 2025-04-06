@@ -66,7 +66,8 @@
 
 > Повторный запуск плейбука показал отсутствие изменений, т.е. идемпотентность соблюдена:  
 > ![no changes](https://github.com/user-attachments/assets/9b2f6a7b-efae-4624-be2d-dbe3a497a249)
->
+>![020](https://github.com/user-attachments/assets/fddf40e6-a80d-4a9e-b8c6-61972a3da079)
+
 > 6. Доступ к Lighthouse и коннект к Clickhouse:  
 > ![web](https://github.com/user-attachments/assets/2555326b-a87e-4fc1-8cdd-ba4794507881)
 
