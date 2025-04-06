@@ -46,7 +46,7 @@
 ---
 > ### Ответ
 >
-> 1. Инфраструктура по-прежнему создается с помощью [terraform](./%20%20%20%20terraform%20%20) с модулями, в результате динамически формируется inventory [prod.yml](./%20%20%20%20playbook/%20%20%20%20inventory%20%20/prod.example.yml) по шаблону [inventory.tftpl](terraform/inventory.tftpl).  
+> 1. Инфраструктура по-прежнему создается с помощью [terraform](./%20%20%20%20terraform%20%20) с модулями, в результате динамически формируется inventory [prod.yml](./%20%20%20%20playbook/%20%20%20%20inventory%20%20/prod.example.yml) по шаблону [inventory.tftpl](./%20%20%20%20terraform%20%20/inventory.tftpl).  
 > Clickhouse и Lighthouse будут ставиться на отдельные ВМ, Vector на две другие ВМ.
 >
 > 2. Инициализируем роли ansible_role_vector и ansible_role_lighthouse (поменяем имена, т.к. по новым правилам ansible-lint имя роли должно соответствовать `^[a-z][a-z0-9_]*$`)
@@ -57,11 +57,11 @@
 >    * [Роль `ansible_role_lighthouse`](https://github.com/smutosey/ansible_role_lighthouse). В качестве зависимости роль использует официальную роль `nginxinc.nginx`
 >    * [Роль `ansible_role_vector`](https://github.com/smutosey/ansible_role_vector)
 >
-> 4. Создадим файл [requirements.yml](playbook/requirements.yml), где опишем инсталляцию ролей, привязку версии.  
+> 4. Создадим файл [requirements.yml](./%20%20%20%20playbook/requirements.yml), где опишем инсталляцию ролей, привязку версии.  
 > Установка прошла успешно:  
 > ![roles install](https://github.com/user-attachments/assets/c2be34db-1b24-497b-bf85-9595e322991b)
 
-> 5. Сформируем [playbook.yml](playbook/playbook.yml), для play "Install Lighthouse" добавим pre_tasks с установкой git. Запустим плейбук, изменения применены успешно:  
+> 5. Сформируем [playbook.yml](./%20%20%20%20playbook/playbook.yml), для play "Install Lighthouse" добавим pre_tasks с установкой git. Запустим плейбук, изменения применены успешно:  
 > ![play recap](https://github.com/user-attachments/assets/75b003b9-1780-4e5d-8533-c810b997deb0)
 
 > Повторный запуск плейбука показал отсутствие изменений, т.е. идемпотентность соблюдена:  
@@ -71,4 +71,4 @@
 > ![web](https://github.com/user-attachments/assets/2555326b-a87e-4fc1-8cdd-ba4794507881)
 
 >
-> 7. Актуализировал информацию в [README.md](playbook/README.md) плейбука.
+> 7. Актуализировала информацию в [README.md](./%20%20%20%20playbook/README.md)плейбука.
