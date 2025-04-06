@@ -12,9 +12,9 @@
 
 ## Конфигурация
 
-Список хостов (inventory) должен включать группы `lighthouse`, `clickhouse` и `veсtor`. Пример: [prod.example.yml](./%20%20%20%20playbook/%20%20%20%20inventory%20%20/prod.example.yml)
+Список хостов (inventory) должен включать группы `lighthouse`, `clickhouse` и `veсtor`. Пример: [prod.example.yml](./%20%20%20%20inventory%20%20/prod.example.yml)
 
-Для изменения параметров Clickhouse можно переопределить дефолтные переменные роли `ansible-clickhouse`. Полный список переменных доступен в описании ролей. Базовая конфигурация определена в файле [clickhouse vars.yml](./%20%20%20%20playbook/group_vars/clickhouse%20%20/vars.yml):
+Для изменения параметров Clickhouse можно переопределить дефолтные переменные роли `ansible-clickhouse`. Полный список переменных доступен в описании ролей. Базовая конфигурация определена в файле [clickhouse vars.yml](./group_vars/clickhouse%20%20/vars.yml):
 
 | *Variable* | *Description* |
 | - | - |
@@ -23,7 +23,7 @@
 | clickhouse_networks_default | Доступные подсети для дефолтных профилей пользователя |
 | clickhouse_dbs_default | БД для создания по умолчанию |
 
-Для изменения параметров Vector можно переопределить дефолтные переменные роли `ansible_role_vector`. Полный список переменных доступен в описании ролей. Базовая конфигурация определена в файле [vector vars.yml](./%20%20%20%20playbook/group_vars/%20%20%20%20vector%20%20/vars.yml):
+Для изменения параметров Vector можно переопределить дефолтные переменные роли `ansible_role_vector`. Полный список переменных доступен в описании ролей. Базовая конфигурация определена в файле [vector vars.yml](./group_vars/%20%20%20%20vector%20%20/vars.yml):
 
 | *Variable* | *Description* |
 | - | - |
@@ -31,7 +31,7 @@
 | vector_endpoint_clickhouse | Адрес Clickhouse API |
 | vector_endpoint_clickhouse_table | Таблица по умолчанию |
 
-Для изменения параметров Lighthouse можно переопределить дефолтные переменные роли `ansible_role_lighthouse` и её зависимости `nginxinc.nginx`. Полный список переменных доступен в описании ролей. Базовая конфигурация определена в файле [lighthouse vars.yml](./%20%20%20%20playbook/group_vars/%20%20%20%20lighthouse%20%20/vars.yml).
+Для изменения параметров Lighthouse можно переопределить дефолтные переменные роли `ansible_role_lighthouse` и её зависимости `nginxinc.nginx`. Полный список переменных доступен в описании ролей. Базовая конфигурация определена в файле [lighthouse vars.yml](./group_vars/%20%20%20%20lighthouse%20%20/vars.yml).
 
 | *Variable* | *Description* |
 | - | - |
