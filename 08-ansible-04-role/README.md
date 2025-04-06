@@ -44,27 +44,31 @@
 Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
 
 ---
-Ответ
+> ### Ответ
+>
+> 1. Инфраструктура по-прежнему создается с помощью [terraform](./terraform) с модулями, в результате динамически формируется inventory [prod.yml](playbook/inventory/prod.example.yml) по шаблону [inventory.tftpl](terraform/inventory.tftpl).  
+> Clickhouse и Lighthouse будут ставиться на отдельные ВМ, Vector на две другие ВМ.
+>
+> 2. Инициализируем роли ansible_role_vector и ansible_role_lighthouse (поменяем имена, т.к. по новым правилам ansible-lint имя роли должно соответствовать `^[a-z][a-z0-9_]*$`)
+>
+> 3. Оформим структуру, опишем meta и README.md для ролей. Перенесем таски и переменные для них из старого плейбука в роли, дополним проверками на семейство дистрибутива. Линтером проверим код, исправила ошибки форматирования, затем выложим роли в GIT и создадим теги по результирующим коммитам.  
+> Ссылки на репозитории:
+>
+>    * [Роль `ansible_role_lighthouse`](https://github.com/smutosey/ansible_role_lighthouse). В качестве зависимости роль использует официальную роль `nginxinc.nginx`
+>    * [Роль `ansible_role_vector`](https://github.com/smutosey/ansible_role_vector)
+>
+> 4. Создадим файл [requirements.yml](playbook/requirements.yml), где опишем инсталляцию ролей, привязку версии.  
+> Установка прошла успешно:  
+> ![roles install](https://github.com/user-attachments/assets/c2be34db-1b24-497b-bf85-9595e322991b)
 
-    Инфраструктура по-прежнему создается с помощью terraform с модулями, в результате динамически формируется inventory prod.yml по шаблону inventory.tftpl.
-    Clickhouse и Lighthouse будут ставиться на отдельные ВМ, Vector на две другие ВМ.
+> 5. Сформируем [playbook.yml](playbook/playbook.yml), для play "Install Lighthouse" добавим pre_tasks с установкой git. Запустим плейбук, изменения применены успешно:  
+> ![play recap](https://github.com/user-attachments/assets/75b003b9-1780-4e5d-8533-c810b997deb0)
 
-    Инициализировал роли ansible_role_vector и ansible_role_lighthouse (поменял имена, т.к. по новым правилам ansible-lint имя роли должно соответствовать ^[a-z][a-z0-9_]*$)
+> Повторный запуск плейбука показал отсутствие изменений, т.е. идемпотентность соблюдена:  
+> ![no changes](https://github.com/user-attachments/assets/9b2f6a7b-efae-4624-be2d-dbe3a497a249)
+>
+> 6. Доступ к Lighthouse и коннект к Clickhouse:  
+> ![web](https://github.com/user-attachments/assets/2555326b-a87e-4fc1-8cdd-ba4794507881)
 
-    Оформил структуру, описал meta и README.md для ролей. Перенес таски и переменные для них из старого плейбука в роли, дополнил проверками на семейство дистрибутива. Линтером проверил код, исправил ошибки форматирования, затем выложил роли в GIT и создал теги по результирующим коммитам.
-    Ссылки на репозитории:
-        Роль ansible_role_lighthouse. В качестве зависимости роль использует официальную роль nginxinc.nginx
-        Роль ansible_role_vector
-
-    Создал файл requirements.yml, где описал инсталляцию ролей, привязку версии.
-    Установка прошла успешно:
-    roles install
-
-    Сформировал playbook.yml, для play "Install Lighthouse" добавил pre_tasks с установкой git. Запустил плейбук, изменения применены успешно:
-    play recap Повторный запуск плейбука показал отсутствие изменений, т.е. идемпотентность соблюдена:
-    no changes
-
-    Доступ к Lighthouse и коннект к Clickhouse:
-    web
-
-    Актуализировал информацию в README.md плейбука.
+>
+> 7. Актуализировал информацию в [README.md](playbook/README.md) плейбука.
